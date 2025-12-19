@@ -18,3 +18,19 @@ function getComputerChoice(choice){
 }
 const computerChoice = getComputerChoice(Math.random()*20);
 console.log(computerChoice);
+
+// Function to compare the choices and select winner for round;
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === "rock" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "scissor" || humanChoice === "scissor" && computerChoice === "rock"){
+
+         return `You lost! ${computerChoice} beats ${humanChoice}`;
+
+    }else if (humanChoice === computerChoice){
+        return `It's a draw ${computerChoice} is same as ${humanChoice}`
+    }else {
+        return `You won! ${humanChoice} beats ${computerChoice}`
+    }
+
+} 
+const roundWinner = playRound(userChoice, computerChoice);
+console.log(roundWinner);
