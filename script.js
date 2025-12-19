@@ -42,10 +42,10 @@ function playGame(){
 
     for(let i = 0; i < 5; i++){
         const userChoice = getHumanChoice(prompt("Choose between rock,paper and scissor"));
-        console.log(userChoice)
+        console.log("human choosed: "+ userChoice)
 
         const computerChoice = getComputerChoice(Math.random()*20);
-        console.log(computerChoice);
+        console.log("computer choosed: "+ computerChoice);
 
         const roundWinner = playRound(userChoice, computerChoice);
         console.log(roundWinner);
