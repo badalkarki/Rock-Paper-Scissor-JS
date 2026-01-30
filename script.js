@@ -36,8 +36,5 @@ function playRound(humanChoice, computerChoice){
 
 } 
 
-
-
-
 console.log("Human Score: " + humanScore);
 console.log("Computer Score: "+ computerScore);
