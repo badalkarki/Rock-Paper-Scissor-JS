@@ -37,31 +37,7 @@ function playRound(humanChoice, computerChoice){
 } 
 
 
-// function to play the round of 5 game and decide the winner
-function playGame(){
 
-    for(let i = 0; i < 5; i++){
-        const userChoice = getHumanChoice(prompt("Choose between rock,paper and scissor"));
-        console.log("human choosed: "+ userChoice)
-
-        const computerChoice = getComputerChoice(Math.random()*20);
-        console.log("computer choosed: "+ computerChoice);
-
-        const roundWinner = playRound(userChoice, computerChoice);
-        console.log(roundWinner);
-    }
-
-    if(humanScore > computerScore){
-        return ("Yeah Humans are still superior than the computers, you proved it.");
-    }else if(computerScore > humanScore) {
-        return ("Oh no! Computer are getting dangerous it's beating human on everything.")
-    }else {
-        return ("That was a tough battle, but it was a draw.")
-    }
-}
-const gameWinner =playGame();
 
 console.log("Human Score: " + humanScore);
 console.log("Computer Score: "+ computerScore);
-
-console.log(gameWinner)t
