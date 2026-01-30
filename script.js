@@ -64,4 +64,4 @@ const gameWinner =playGame();
 console.log("Human Score: " + humanScore);
 console.log("Computer Score: "+ computerScore);
 
-console.log(gameWinner)
+console.log(gameWinner)t
