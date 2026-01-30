@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+.choicesBtn {
+    display: flex;
+    gap: 1rem;
+}
+
+.choicesBtn button {
+    padding: 10rem;
+}
