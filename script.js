@@ -1,7 +1,6 @@
 // Function to get the useInput on what they choose.
-function getHumanChoice(userInput){
-    userInput = userInput.toLowerCase();
-    return userInput;
+function getHumanChoice(humanChoice){
+    return humanChoice;
 }
 
 // // Function to get the choice of the computer.
@@ -36,5 +35,41 @@ function playRound(humanChoice, computerChoice){
 
 } 
 
-console.log("Human Score: " + humanScore);
-console.log("Computer Score: "+ computerScore);
+
+function playGame(humanChoiceResult){
+        const userChoice = getHumanChoice(humanChoiceResult);
+        console.log("human choice: "+ userChoice)
+
+        const computerChoice = getComputerChoice(Math.random()*20);
+        console.log("computer choice: "+ computerChoice);
+
+        const roundWinner = playRound(userChoice, computerChoice);
+        console.log(roundWinner);
+}
+
+
+
+const buttons = document.querySelector(".choicesBtn");
+    let result = "";
+    buttons.addEventListener("click", (e) => {
+    switch(e.target.id) {
+        case "rock":
+            result = "rock";
+            break;
+        case "paper":
+            result = "paper";
+            break;
+        case "scissor":
+            result = "scissor";
+            break;
+            
+    }
+   playGame(result);
+       console.log("Human Score: " + humanScore);
+       console.log("Computer Score: "+ computerScore);
+})
+
+    
+
+    
+
