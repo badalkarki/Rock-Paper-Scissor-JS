@@ -20,3 +20,12 @@ body{
 .choicesBtn button {
     padding: 10rem;
 }
+
+.choicesBtn > div {
+    width: 400px;
+    text-align: center;
+}
+img {
+    object-fit: cover;
+    width: 200px;
+}
