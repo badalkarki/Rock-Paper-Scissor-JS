@@ -38,13 +38,14 @@ function playRound(humanChoice, computerChoice){
 
 function playGame(humanChoiceResult){
         const userChoice = getHumanChoice(humanChoiceResult);
-        console.log("human choice: "+ userChoice)
-
         const computerChoice = getComputerChoice(Math.random()*20);
-        console.log("computer choice: "+ computerChoice);
-
         const roundWinner = playRound(userChoice, computerChoice);
-        console.log(roundWinner);
+
+      
+            console.log("human choice: "+ userChoice);
+            console.log("computer choice: "+ computerChoice);
+            console.log(roundWinner);
+        
 }
 
 
@@ -63,10 +64,15 @@ const buttons = document.querySelector(".choicesBtn");
             result = "scissor";
             break;
             
-    }
-   playGame(result);
+    } 
+
+    if( humanScore < 5 && computerScore < 5) {
+       playGame(result);
+        console.log(humanScore < 5);
+        console.log(computerScore < 5);
        console.log("Human Score: " + humanScore);
        console.log("Computer Score: "+ computerScore);
+    } 
 })
 
     
