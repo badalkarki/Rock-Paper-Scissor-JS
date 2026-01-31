@@ -68,12 +68,10 @@ const buttons = document.querySelector(".choicesBtn");
 
     if( humanScore < 5 && computerScore < 5) {
        playGame(result);
-        console.log(humanScore < 5);
-        console.log(computerScore < 5);
        console.log("Human Score: " + humanScore);
        console.log("Computer Score: "+ computerScore);
     } 
-})
+});
 
     
 
