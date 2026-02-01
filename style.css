@@ -6,12 +6,20 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap: 2rem;
+    gap: 8rem;
+}
+.individualScore{
+    display: flex;
+    gap: 40px;
 }
 
+#displayWinner{
+    font-size: 30px;
+}
 .choicesBtn {
     display: flex;
     gap: 1rem;

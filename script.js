@@ -24,32 +24,33 @@ function getComputerChoice(choice){
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "scissor" || humanChoice === "scissor" && computerChoice === "rock"){
         computerScore += 1;
-         return `You lost! ${computerChoice} beats ${humanChoice}.`;
+         return `You lost!; Computer's Choice ${computerChoice} beats Your Choice ${humanChoice}.`;
 
     }else if (humanChoice === computerChoice){
-        return `It's a draw ${computerChoice} is same as ${humanChoice}.`
+        return `It's a draw; Your Choice ${humanChoice} Human Choice ${computerChoice}.`
     }else {
         humanScore += 1;
-        return `You won! ${humanChoice} beats ${computerChoice}.`
+        return `You won!; Your Choice ${humanChoice} beats Computer's Choice ${computerChoice}.`
     }
 
 } 
 
-
+// function to play a game which also calls all the other function
 function playGame(humanChoiceResult){
         const userChoice = getHumanChoice(humanChoiceResult);
         const computerChoice = getComputerChoice(Math.random()*20);
         const roundWinner = playRound(userChoice, computerChoice);
 
-      
-            console.log("human choice: "+ userChoice);
-            console.log("computer choice: "+ computerChoice);
-            console.log(roundWinner);
-        
+        const displayWinner = document.querySelector("#displayWinner");
+        displayWinner.textContent = roundWinner;
+
+        //  console.log("human choice: "+ userChoice);
+        //  console.log("computer choice: "+ computerChoice);
+        //  console.log(roundWinner);     
 }
 
 
-
+// EventListener
 const buttons = document.querySelector(".choicesBtn");
     let result = "";
     buttons.addEventListener("click", (e) => {
@@ -68,12 +69,14 @@ const buttons = document.querySelector(".choicesBtn");
 
     if( humanScore < 5 && computerScore < 5) {
        playGame(result);
-       console.log("Human Score: " + humanScore);
-       console.log("Computer Score: "+ computerScore);
+       const displayHumanScore = document.querySelector("#displayHumanScore");
+       displayHumanScore.textContent = `Human Score: ${humanScore}`
+
+       const displayComputerScore = document.querySelector("#displayComputerScore");
+        displayComputerScore.textContent = `Computer Score: ${computerScore}`;
     } 
 });
 
-    
 
     
 
