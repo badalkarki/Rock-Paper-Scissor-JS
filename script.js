@@ -24,10 +24,10 @@ function getComputerChoice(choice){
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "scissor" || humanChoice === "scissor" && computerChoice === "rock"){
         computerScore += 1;
-         return `You lost!; Computer's Choice ${computerChoice} beats Your Choice ${humanChoice}.`;
+         return `You lost!; Computer's Choice <span id="cs" >${computerChoice} </span> beats Your Choice ${humanChoice}.`;
 
     }else if (humanChoice === computerChoice){
-        return `It's a draw; Your Choice ${humanChoice} Human Choice ${computerChoice}.`
+        return `It's a draw; Your Choice '${humanChoice}' Human Choice '${computerChoice}'.`
     }else {
         humanScore += 1;
         return `You won!; Your Choice ${humanChoice} beats Computer's Choice ${computerChoice}.`
@@ -42,11 +42,11 @@ function playGame(humanChoiceResult){
         const roundWinner = playRound(userChoice, computerChoice);
 
         const displayWinner = document.querySelector("#displayWinner");
-        displayWinner.textContent = roundWinner;
-
-        //  console.log("human choice: "+ userChoice);
-        //  console.log("computer choice: "+ computerChoice);
-        //  console.log(roundWinner);     
+        if(humanScore < 5 && computerScore < 5) {
+            displayWinner.textContent = `Computer Choose: ${computerChoice}`;
+        } else {
+            displayWinner.textContent = roundWinner;
+        }
 }
 
 
@@ -70,7 +70,7 @@ const buttons = document.querySelector(".choicesBtn");
     if( humanScore < 5 && computerScore < 5) {
        playGame(result);
        const displayHumanScore = document.querySelector("#displayHumanScore");
-       displayHumanScore.textContent = `Human Score: ${humanScore}`
+       displayHumanScore.textContent = `Human Score: ${humanScore}`;
 
        const displayComputerScore = document.querySelector("#displayComputerScore");
         displayComputerScore.textContent = `Computer Score: ${computerScore}`;
