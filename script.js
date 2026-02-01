@@ -24,7 +24,7 @@ function getComputerChoice(choice){
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "scissor" || humanChoice === "scissor" && computerChoice === "rock"){
         computerScore += 1;
-         return `You lost!; Computer's Choice <span id="cs" >${computerChoice} </span> beats Your Choice ${humanChoice}.`;
+         return `You lost!; Computer's Choice ${computerChoice} beats Your Choice ${humanChoice}.`;
 
     }else if (humanChoice === computerChoice){
         return `It's a draw; Your Choice '${humanChoice}' Human Choice '${computerChoice}'.`
